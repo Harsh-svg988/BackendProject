@@ -13,10 +13,11 @@ import java.util.List;
 public class FakeStoreProductService implements ProductService{
     @Override
     public Product getProductById(Long id) {
-        RestTemplate restTemplate = new RestTemplate();
-        FakeStoreProductDto fakeStoreProductDto = restTemplate.getForObject("https://fakestoreapi.com/products/" + id,
-                FakeStoreProductDto.class);
-        return convertFakeStoreProductDtoToProduct(fakeStoreProductDto);
+        throw new RuntimeException("something went exception");
+//        RestTemplate restTemplate = new RestTemplate();
+//        FakeStoreProductDto fakeStoreProductDto = restTemplate.getForObject("https://fakestoreapi.com/products/" + id,
+//                FakeStoreProductDto.class);
+//        return convertFakeStoreProductDtoToProduct(fakeStoreProductDto);
     }
 
     @Override
